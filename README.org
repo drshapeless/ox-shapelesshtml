@@ -1,0 +1,22 @@
+#+TITLE: Shapeless HTML
+
+"ox-shapelesshtml" is an HTML export backend for org mode in Emacs.
+
+* Feature
+It is based on [[https://github.com/balddotcat/ox-slimhtml][ox-slimhtml]], which solves a lot of issues in the
+default org HTML export backend, the generated HTML file is a lot more
+minimal. "ox-shapelesshtml" provides some extra features for my
+personal needs, especially in blogging.
+
+- No extra newline character in paragraph for Asian languages,
+  which turns into a space when rendered in browser.
+- Support for quote block.
+
+* Installation
+Put ~ox-shapelesshtml.el' into your load path.
+#+begin_src emacs-lisp
+  (require 'ox-shapelesshtml)
+#+end_src
+
+* Dependencies
+- [[https://github.com/balddotcat/ox-slimhtml][ox-slimhtml]]
