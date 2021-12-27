@@ -5,7 +5,7 @@
 * Feature
 It is based on [[https://github.com/balddotcat/ox-slimhtml][ox-slimhtml]], which solves a lot of issues in the
 default org HTML export backend, the generated HTML file is a lot more
-minimal. "ox-shapelesshtml" provides some extra features for my
+minimal. ~ox-shapelesshtml~ provides some extra features for my
 personal needs, especially in blogging.
 
 - No extra newline character in paragraph for Asian languages,
