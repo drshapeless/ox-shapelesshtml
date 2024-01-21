@@ -3,7 +3,7 @@
 ~ox-shapelesshtml~ is an HTML export backend for org mode in Emacs.
 
 * Feature
-It is based on [[https://github.com/balddotcat/ox-slimhtml][ox-slimhtml]], which solves a lot of issues in the
+It was based on [[https://github.com/balddotcat/ox-slimhtml][ox-slimhtml]], which solves a lot of issues in the
 default org HTML export backend, the generated HTML file is a lot more
 minimal. ~ox-shapelesshtml~ provides some extra features for my
 personal needs, especially in blogging.
@@ -12,11 +12,38 @@ personal needs, especially in blogging.
   which turns into a space when rendered in browser.
 - Support for quote block.
 
+
+However, the original ox-slimhtml was abandoned by its author. If you
+visit the github page of the repo, you can see that it says.
+#+begin_quote
+slimhtml is now part of Org, included in GNU Emacs, future bug reports
+or contributions should be sent to Org directly.
+#+end_quote
+
+You may read this [[https://list.orgmode.org/41D2E10D-BCFF-4604-8417-B499514AF904@bald.cat/][mail thread]]. ox-slimhtml was never included into the
+official org-mode. And the reason was quite silly, the org-mode guys
+wants the author of ox-slimhtml to work together on the original
+ox-html backend, and making ox-slimhtml an option.
+
+If you really takes a look into the ox-html source code, you will be
+mentally damaged by the messy code and unnecessary things it does for
+a basic html-export.
+
+Originally, ox-shapelesshtml depends on the ox-slimhtml package. I
+took some time to read and rewrite almost everything from scratch to
+strip off things I consider unnecessary in the ox-slimhtml backend.
+
+ox-shapelesshtml is a lot slimer and dependency free. Well, it depends
+on built-in ox-html though. But at least I don't have to depends on
+ox-slimhtml anymore.
+
 * Installation
 Put ~ox-shapelesshtml.el~ into your load path.
 #+begin_src emacs-lisp
   (require 'ox-shapelesshtml)
 #+end_src
 
-* Dependencies
-- [[https://github.com/balddotcat/ox-slimhtml][ox-slimhtml]]
+straight.el
+#+begin_src emacs-lisp
+  (straight-use-package '(ox-shapelesshtml :type git :host github :repo "drshapeless/ox-shapelesshtml"))
+#+end_src
