@@ -327,6 +327,8 @@ Return output file name."
   '(?s "Export to shapelesshtml"
        ((?H "As shapelesshtml buffer" ox-shapelesshtml-export-as-html)
         (?h "As shapelesshtml file" ox-shapelesshtml-export-to-html)))
+  :options-alist
+  '((:html-doctype "HTML_DOCTYPE" nil org-html-doctype))
   )
 
 ;;;###autoload
